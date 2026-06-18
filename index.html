@@ -387,9 +387,8 @@ const INIT_PROFILES = [
   buildProfile({ id: 3, username: "@nike",   name: "Nike",                tag: "Бренд",  followers: 306_000_000, avgLikes: 210_000, er: 2.8, avatarKey: "nike"   }),
   buildProfile({ id: 4, username: "@dior",   name: "Dior",                tag: "Мода",   followers:  54_300_000, avgLikes:  75_000, er: 5.2, avatarKey: "dior"   }),
 ];
-
 /* ================================================================
-   REAL API FETCH — instagram-scraper-api2 on RapidAPI
+   REAL API FETCH — instagram360 on RapidAPI
    ================================================================ */
 const API_HOST = "instagram360.p.rapidapi.com";
 
@@ -427,7 +426,7 @@ const fetchRealProfile = async (handle, apiKey, tag) => {
 
   try {
     const postsRes = await fetch(
-      `https://${API_HOST}/userposts/?username_or_id_or_url=${encodeURIComponent(handle)}``,
+      `https://${API_HOST}/userposts/?username_or_id_or_url=${encodeURIComponent(handle)}`,
       { method: "GET", headers }
     );
     if (postsRes.ok) {
