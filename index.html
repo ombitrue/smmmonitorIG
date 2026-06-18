@@ -399,36 +399,36 @@ const fetchRealProfile = async (handle, apiKey, tag) => {
   };
 
   /* 1. User info */
-  const infoRes = await fetch(
-    `https://${API_HOST}/userinfo/?username_or_id_or_url=${encodeURIComponent(handle)}`,
-    { method: "GET", headers }
-  );
+  const fetchRealProfile = async (handle, apiKey, tag) => {
+  // Указываем адрес твоего локального сервера
+  const BACKEND_URL = "http://localhost:5000";
+
+  /* 1. Инфо о пользователе */
+  // Заменили прямой URL на твой локальный бэкенд
+  const infoRes = await fetch(`${BACKEND_URL}/api/userinfo?username=${encodeURIComponent(handle)}`);
+  
   if (!infoRes.ok) {
-    if (infoRes.status === 401 || infoRes.status === 403)
-      throw new Error("Неверный API-ключ. Проверьте настройки (⚙).");
-    if (infoRes.status === 404)
-      throw new Error(`Аккаунт @${handle} не найден.`);
-    throw new Error(`API вернул ошибку ${infoRes.status}.`);
+    if (infoRes.status === 404) throw new Error(`Аккаунт @${handle} не найден.`);
+    throw new Error(`Сервер вернул ошибку ${infoRes.status}.`);
   }
   const infoJson = await infoRes.json();
   const d = infoJson?.data;
-  if (!d) throw new Error("Профиль не найден — пустой ответ API.");
+  if (!d) throw new Error("Профиль не найден — пустой ответ сервера.");
 
   const followers = d.follower_count || 0;
   const name      = d.full_name || d.username || handle;
   const avatarUrl = d.profile_pic_url_hd || d.profile_pic_url || null;
   const verified  = !!(d.is_verified);
 
-  /* 2. Recent posts */
+  /* 2. Посты пользователя */
   let realPosts  = null;
   let avgLikes   = Math.round(followers * 0.018);
   let er         = 1.8;
 
   try {
-    const postsRes = await fetch(
-      `https://${API_HOST}/userposts/?username_or_id_or_url=${encodeURIComponent(handle)}`,
-      { method: "GET", headers }
-    );
+    // Здесь тоже заменили URL на локальный бэкенд
+    const postsRes = await fetch(`${BACKEND_URL}/api/userposts?username=${encodeURIComponent(handle)}`);
+    
     if (postsRes.ok) {
       const postsJson = await postsRes.json();
       const items = postsJson?.data?.items || [];
@@ -449,7 +449,7 @@ const fetchRealProfile = async (handle, apiKey, tag) => {
         er = +(realPosts.reduce((s, p) => s + parseFloat(p.er), 0) / realPosts.length).toFixed(2);
       }
     }
-  } catch (_) { /* posts fetch failed — use synthetic fallback */ }
+  } catch (_) { /* Ошибку постов игнорируем */ }
 
   return buildProfile({
     id:        Date.now(),
