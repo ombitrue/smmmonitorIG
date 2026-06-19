@@ -72,11 +72,18 @@
     .add-btn:hover{opacity:.87;transform:translateY(-1px)}
     .add-btn:active{transform:none}
 
-    .cat-tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+    .cat-tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
     .cat-tab{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-s);cursor:pointer;font-size:.79rem;font-weight:500;transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap}
     .cat-tab:hover{border-color:var(--border-l);color:var(--text-p)}
     .cat-tab.on{background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.2));border-color:var(--purple);color:var(--text-p)}
     .cat-count{background:rgba(168,85,247,.2);color:var(--purple);border-radius:20px;padding:0 6px;font-size:.68rem;font-weight:700}
+
+    .grid-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+    .search-in{flex:1;min-width:180px;max-width:320px;padding:7px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-p);font-size:.82rem;outline:none;transition:border-color .15s}
+    .search-in:focus{border-color:var(--purple)}
+    .search-in::placeholder{color:var(--text-m)}
+    .sort-select{padding:7px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-s);font-size:.8rem;outline:none;cursor:pointer}
+    .sort-select:focus{border-color:var(--purple)}
 
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:26px}
 
@@ -85,9 +92,10 @@
     .card:hover{background:var(--bg-hover);transform:translateY(-2px);box-shadow:0 10px 34px rgba(0,0,0,.45)}
     .card:hover::after,.card.sel::after{opacity:1}
     .card.sel{background:var(--bg-hover)}
+    .card.cmp-on{border-color:var(--purple)}
 
     .c-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
-    .c-prof{display:flex;align-items:center;gap:11px}
+    .c-prof{display:flex;align-items:center;gap:10px}
     .c-name{font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:5px}
     .c-handle{color:var(--text-s);font-size:.77rem;margin-top:2px}
     .c-tag{font-size:.67rem;padding:2px 7px;border-radius:20px;background:rgba(168,85,247,.13);color:var(--purple);border:1px solid rgba(168,85,247,.27);margin-top:4px;display:inline-block}
@@ -96,8 +104,16 @@
     .badge.dn{background:rgba(239,68,68,.13);color:var(--red)}
     .arr{font-size:.58rem}
 
+    .cmp-check{width:19px;height:19px;border-radius:6px;border:1.5px solid var(--border-l);background:var(--bg-secondary);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#fff;transition:all .15s;padding:0}
+    .cmp-check.on{background:var(--purple);border-color:var(--purple)}
+    .cmp-check:hover{border-color:var(--purple)}
+
+    .card-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+    .btn-row{display:flex;gap:5px}
     .del-btn{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.22);color:rgba(239,68,68,.75);border-radius:7px;cursor:pointer;font-size:.72rem;padding:3px 7px;transition:all .15s;white-space:nowrap}
     .del-btn:hover{background:rgba(239,68,68,.22);color:var(--red);border-color:var(--red)}
+    .edit-btn{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);color:var(--purple)}
+    .edit-btn:hover{background:rgba(168,85,247,.22);border-color:var(--purple);color:#fff}
 
     .c-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:12px}
     .met{display:flex;flex-direction:column;gap:2px}
@@ -117,17 +133,24 @@
     .close-btn{width:33px;height:33px;border-radius:9px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-s);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.92rem;transition:all .15s;flex-shrink:0}
     .close-btn:hover{background:var(--bg-hover);color:var(--text-p)}
 
+    .notes-box{background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:10px;padding:12px 14px;margin-bottom:18px}
+    .notes-lbl{font-size:.7rem;color:var(--purple);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;font-weight:700;display:flex;align-items:center;gap:5px}
+    .notes-text{font-size:.84rem;color:var(--text-s);line-height:1.6;white-space:pre-wrap}
+
     .tabs{display:flex;gap:2px;margin-bottom:20px;border-bottom:1px solid var(--border)}
     .tab{padding:9px 16px;border:none;background:transparent;color:var(--text-m);font-size:.82rem;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;white-space:nowrap}
     .tab:hover{color:var(--text-p)}
     .tab.on{color:var(--text-p);border-bottom-color:var(--purple)}
 
-    .sort-bar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+    .sort-bar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px}
     .sort-btn{padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-s);cursor:pointer;font-size:.76rem;font-weight:500;transition:all .15s;white-space:nowrap}
     .sort-btn:hover{border-color:var(--border-l);color:var(--text-p)}
     .sort-btn.on{background:rgba(168,85,247,.18);border-color:var(--purple);color:var(--text-p)}
 
-    .d-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:12px;margin-bottom:20px}
+    .post-dist{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .post-dist-item{background:var(--bg-secondary);padding:3px 10px;border-radius:20px;border:1px solid var(--border);font-size:.72rem;color:var(--text-m)}
+
+    .d-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:20px}
     .ds{background:var(--bg-secondary);border:1px solid var(--border);border-radius:11px;padding:14px}
     .ds-lbl{font-size:.67rem;color:var(--text-m);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
     .ds-val{font-size:1.2rem;font-weight:700;background:var(--ig);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -136,24 +159,33 @@
     .dr{color:var(--red)}
     .chart-wrap{position:relative;height:252px;width:100%}
 
-    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px}
-    .post{background:var(--bg-secondary);border:1px solid var(--border);border-radius:11px;padding:13px}
-    .post-type{font-size:.69rem;color:var(--text-m);margin-bottom:7px;display:flex;align-items:center;gap:5px}
+    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px}
+    .post{background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:12px;transition:border-color .15s}
+    .post:hover{border-color:var(--border-l)}
+    .post-thumb-wrap{position:relative;width:100%;aspect-ratio:1/1;border-radius:9px;overflow:hidden;margin-bottom:10px;background:var(--bg-card)}
+    .post-thumb{width:100%;height:100%;object-fit:cover;display:block}
+    .post-thumb-fallback{width:100%;height:100%;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(236,72,153,.18));display:flex}
+    .post-type-badge{position:absolute;top:6px;left:6px;background:rgba(0,0,0,.62);backdrop-filter:blur(4px);padding:2px 8px;border-radius:20px;font-size:.64rem;color:#fff;display:flex;align-items:center;gap:3px}
     .post-row{display:flex;justify-content:space-between;margin-top:5px}
     .post-v{font-size:.87rem;font-weight:600}
     .post-l{font-size:.65rem;color:var(--text-m)}
-    .post-er{font-size:.77rem;color:var(--pink);font-weight:600;margin-top:7px}
+    .post-er{font-size:.77rem;color:var(--pink);font-weight:600;margin-top:7px;display:flex;align-items:center}
+    .best-tag{margin-left:7px;font-size:.65rem;color:var(--orange);background:rgba(249,115,22,.13);padding:1px 6px;border-radius:20px}
+    .post-link{display:block;text-align:center;margin-top:9px;font-size:.73rem;color:var(--purple);text-decoration:none;font-weight:600;padding:6px;border-radius:7px;background:rgba(168,85,247,.08);transition:all .15s}
+    .post-link:hover{background:rgba(168,85,247,.2)}
 
     .overlay{position:fixed;inset:0;background:rgba(0,0,0,.74);backdrop-filter:blur(7px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadein .15s ease}
     .modal{background:var(--bg-card);border:1px solid var(--border-l);border-radius:20px;padding:26px;width:100%;max-width:430px;max-height:90vh;overflow-y:auto}
+    .cmp-modal{max-width:820px}
     .m-title{font-size:1.06rem;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:9px}
     .m-ic{width:30px;height:30px;background:var(--ig);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
     .m-field{margin-bottom:14px}
     .m-lbl{font-size:.75rem;color:var(--text-s);margin-bottom:5px;display:block}
-    .m-in{width:100%;padding:9px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-p);font-size:.87rem;outline:none;transition:border-color .15s}
+    .m-in{width:100%;padding:9px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-p);font-size:.87rem;outline:none;transition:border-color .15s;font-family:inherit}
     .m-in:focus{border-color:var(--purple)}
     .m-in::placeholder{color:var(--text-m)}
     .m-in:disabled{opacity:.55;cursor:not-allowed}
+    .m-textarea{resize:vertical;line-height:1.5}
     .m-hint{font-size:.69rem;color:var(--text-m);margin-top:4px}
     .m-actions{display:flex;gap:8px;margin-top:20px}
     .btn-cancel{flex:1;padding:10px;border-radius:9px;border:1px solid var(--border);background:transparent;color:var(--text-s);font-size:.87rem;cursor:pointer;transition:all .15s}
@@ -172,6 +204,14 @@
     @keyframes slideup{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
     .toast-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
 
+    .cmp-bar{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--border-l);border-radius:14px;padding:11px 18px;display:flex;align-items:center;gap:18px;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:300;animation:slideup .2s ease;font-size:.84rem}
+    .cmp-avatars{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .cmp-avatar-item{display:flex;align-items:center;gap:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:7px 12px}
+    .cmp-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:.82rem}
+    .cmp-table th,.cmp-table td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--border)}
+    .cmp-table th{color:var(--text-m);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+    .cmp-best{color:var(--green);font-weight:700}
+
     .live-badge{font-size:.66rem;padding:2px 7px;border-radius:20px;background:rgba(34,197,94,.13);color:var(--green);border:1px solid rgba(34,197,94,.27)}
     .verified-ic{color:var(--blue);font-size:.75rem}
 
@@ -186,6 +226,7 @@
       .hdr-inner{flex-direction:column;align-items:flex-start}
       .grid{grid-template-columns:1fr}
       .d-stats{grid-template-columns:1fr 1fr}
+      .cmp-bar{flex-direction:column;gap:10px;padding:14px}
     }
 
     code{background:var(--bg-secondary);padding:1px 5px;border-radius:4px;font-size:.85em;color:var(--purple)}
@@ -197,33 +238,34 @@
 
 /* ================================================================
    КОНФИГ БЭКЕНДА
-   ВНИМАНИЕ: единственный источник правды для адреса прокси-сервера.
-   Никакой другой код в этом файле НЕ должен обращаться напрямую
-   к *.rapidapi.com — только к этому локальному адресу.
    ================================================================ */
 const BACKEND_URL = "http://127.0.0.1:5050";
-// ВАЖНО: порт 5050, а не 5000 — на macOS порт 5000 занят системным
-// AirPlay Receiver (Control Center → AirDrop & Handoff) и перехватывает
-// часть запросов до Node-процесса, что ломает CORS-заголовки.
 
 /* ================================================================
-   STORAGE HELPERS
+   STORAGE HELPERS (с миграцией со старой схемы v3 → v4)
    ================================================================ */
-const LS_PROFILES = "igm_profiles_v3";
-const LS_APIKEY   = "igm_rapidapi_key";
+const LS_PROFILES     = "igm_profiles_v4";
+const LS_PROFILES_OLD = "igm_profiles_v3";
+const LS_APIKEY       = "igm_rapidapi_key";
 
 const saveProfiles = list => {
   try { localStorage.setItem(LS_PROFILES, JSON.stringify(list)); } catch(e) {}
 };
 const loadProfiles = () => {
-  try { const r = localStorage.getItem(LS_PROFILES); return r ? JSON.parse(r) : null; } catch(e) { return null; }
+  try {
+    const r = localStorage.getItem(LS_PROFILES);
+    if (r) return JSON.parse(r);
+    const old = localStorage.getItem(LS_PROFILES_OLD);
+    if (old) {
+      const migrated = JSON.parse(old).map(p => ({ comment: "", ...p }));
+      saveProfiles(migrated);
+      return migrated;
+    }
+  } catch(e) {}
+  return null;
 };
-const saveApiKey = k => {
-  try { localStorage.setItem(LS_APIKEY, k); } catch(e) {}
-};
-const loadApiKey = () => {
-  try { return localStorage.getItem(LS_APIKEY) || ""; } catch(e) { return ""; }
-};
+const saveApiKey = k => { try { localStorage.setItem(LS_APIKEY, k); } catch(e) {} };
+const loadApiKey = () => { try { return localStorage.getItem(LS_APIKEY) || ""; } catch(e) { return ""; } };
 
 /* ================================================================
    UTILITIES
@@ -236,23 +278,13 @@ const fmtDelta = n => (n >= 0 ? "+" : "−") + fmt(Math.abs(n));
 
 const rnd = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
 
-const genSeries = (base, pts, vol = 0.014, trend = 0.003) => {
-  const out = [];
-  let v = base * (1 - trend * pts * 0.6);
-  for (let i = 0; i < pts; i++) {
-    v = Math.max(1, v * (1 + trend + (Math.random() - 0.47) * vol));
-    out.push(Math.round(v));
-  }
-  out[pts - 1] = Math.round(base);
-  return out;
-};
-
 const TF = {
   "1Д": { pts: 24, unit: "hour",  label: "1 День"   },
   "1Н": { pts:  7, unit: "day",   label: "1 Неделя" },
   "1М": { pts: 30, unit: "day",   label: "1 Месяц"  },
   "1Г": { pts: 12, unit: "month", label: "1 Год"    },
 };
+const TF_DAYS = { "1Д": 1, "1Н": 7, "1М": 30, "1Г": 365 };
 
 const makeDates = (pts, unit) => {
   const now = new Date(), out = [];
@@ -277,6 +309,62 @@ const parseHandle = raw => {
   const m = s.match(/instagram\.com\/([^/?#\s]+)/i);
   if (m) return m[1].replace(/\/$/, "").toLowerCase();
   return s.replace(/^@/, "").trim().toLowerCase();
+};
+
+const audienceQuality = er => {
+  const e = Number(er);
+  if (e >= 6)   return { label: "Отличное", color: "#22c55e" };
+  if (e >= 3.5) return { label: "Хорошее",  color: "#a855f7" };
+  if (e >= 1)   return { label: "Среднее",  color: "#f97316" };
+  return            { label: "Низкое",   color: "#ef4444" };
+};
+
+/* ================================================================
+   ГЕНЕРАЦИЯ КОРРЕЛИРОВАННЫХ ВРЕМЕННЫХ РЯДОВ
+   Ключевой фикс: раньше 1Д/1Н/1М/1Г генерировались НЕЗАВИСИМО друг
+   от друга, из-за чего цифры не сходились при переключении вкладок.
+   Теперь для каждой метрики строится ОДИН общий дневной массив
+   (источник истины), а все 4 таймфрейма — это срезы/агрегаты ОДНОГО
+   и того же массива, всегда заканчивающиеся на одном "сегодня".
+   ================================================================ */
+const DAYS_HISTORY = 380;
+
+const genDailyMaster = (base, vol = 0.012, trend = 0.0015) => {
+  const out = [];
+  let v = Math.max(1, base * (1 - trend * DAYS_HISTORY * 0.4));
+  for (let i = 0; i < DAYS_HISTORY; i++) {
+    v = Math.max(1, v * (1 + trend + (Math.random() - 0.47) * vol));
+    out.push(Math.round(v));
+  }
+  out[DAYS_HISTORY - 1] = Math.round(base); // якорим последнее значение на реальное "сегодня"
+  return out;
+};
+
+const deriveTF = daily => {
+  const n = daily.length;
+  const today     = daily[n - 1];
+  const yesterday = daily[n - 2] ?? today;
+
+  const week  = daily.slice(n - 7);
+  const month = daily.slice(n - 30);
+
+  const year = [];
+  for (let m = 11; m >= 0; m--) {
+    const idx = Math.max(0, n - 1 - m * 30);
+    year.push(daily[idx]);
+  }
+  year[year.length - 1] = today;
+
+  const hours = [];
+  for (let h = 0; h < 24; h++) {
+    const frac = h / 23;
+    let v = yesterday + (today - yesterday) * frac;
+    v *= 1 + (Math.random() - 0.5) * 0.006;
+    hours.push(Math.round(Math.max(1, v)));
+  }
+  hours[23] = today;
+
+  return { "1Д": hours, "1Н": week, "1М": month, "1Г": year };
 };
 
 /* ================================================================
@@ -312,7 +400,7 @@ const POST_TYPES = [
 
 const buildProfile = ({ id, username, name, tag, followers, avgLikes, er,
                         avatarKey = null, avatarUrl = null,
-                        realPosts = null, verified = false }) => {
+                        realPosts = null, verified = false, comment = "" }) => {
   let av;
   if (avatarUrl) {
     const fb = nextPal();
@@ -322,14 +410,22 @@ const buildProfile = ({ id, username, name, tag, followers, avgLikes, er,
     av = pre ? { type: "emoji", ...pre } : (() => { const p = nextPal(); return { type: "emoji", emoji: p.emoji, color: p.color }; })();
   }
 
+  const cleanHandle = username.replace(/^@/, "");
+
+  /* Один источник правды на метрику → все 4 таймфрейма из него */
+  const dailyFollowers = genDailyMaster(followers,                 0.010, 0.0022);
+  const dailyLikes     = genDailyMaster(avgLikes,                  0.050, 0.0008);
+  const dailyComments  = genDailyMaster(Math.max(1, avgLikes*0.07),0.060, 0.0008);
+  const dailyER        = genDailyMaster(Math.max(0.1, er),         0.050, 0.0002);
+
+  const fTF = deriveTF(dailyFollowers);
+  const lTF = deriveTF(dailyLikes);
+  const cTF = deriveTF(dailyComments);
+  const eTF = deriveTF(dailyER);
+
   const series = {};
-  Object.entries(TF).forEach(([key, { pts }]) => {
-    series[key] = {
-      followers: genSeries(followers,         pts, 0.012, 0.004),
-      likes:     genSeries(avgLikes,          pts, 0.025, 0.003),
-      comments:  genSeries(avgLikes * 0.07,   pts, 0.030, 0.002),
-      er:        genSeries(Math.max(er, 0.1), pts, 0.018, 0.001),
-    };
+  Object.keys(TF).forEach(key => {
+    series[key] = { followers: fTF[key], likes: lTF[key], comments: cTF[key], er: eTF[key] };
   });
 
   const todayDelta = followers - series["1Д"].followers[0];
@@ -339,9 +435,11 @@ const buildProfile = ({ id, username, name, tag, followers, avgLikes, er,
     : Array.from({ length: 6 }, (_, i) => ({
         id: i,
         ...POST_TYPES[i % 4],
-        likes:    rnd(Math.round(avgLikes * 0.55), Math.round(avgLikes * 1.45)),
-        comments: rnd(Math.round(avgLikes * 0.03), Math.round(avgLikes * 0.13)),
-        er:       Math.max(0, +(Math.random() * 3 + er - 0.6)).toFixed(2),
+        likes:     rnd(Math.round(avgLikes * 0.55), Math.round(avgLikes * 1.45)),
+        comments:  rnd(Math.round(avgLikes * 0.03), Math.round(avgLikes * 0.13)),
+        er:        Math.max(0, +(Math.random() * 3 + er - 0.6)).toFixed(2),
+        thumbnail: `https://picsum.photos/seed/${encodeURIComponent(cleanHandle)}-${i}/400/400`,
+        link:      `https://www.instagram.com/${cleanHandle}/`,
       }));
 
   return {
@@ -349,6 +447,7 @@ const buildProfile = ({ id, username, name, tag, followers, avgLikes, er,
     username: username.startsWith("@") ? username : "@" + username,
     name,
     tag,
+    comment: comment || "",
     followers,
     avgLikes,
     er: Math.max(0, er),
@@ -363,7 +462,7 @@ const buildProfile = ({ id, username, name, tag, followers, avgLikes, er,
 };
 
 /* ================================================================
-   INITIAL MOCK DATA (только при пустом localStorage)
+   INITIAL MOCK DATA
    ================================================================ */
 const INIT_PROFILES = [
   buildProfile({ id: 1, username: "@natgeo", name: "National Geographic", tag: "Медиа",  followers: 280_450_000, avgLikes: 185_000, er: 3.4, avatarKey: "natgeo" }),
@@ -373,8 +472,7 @@ const INIT_PROFILES = [
 ];
 
 /* ================================================================
-   РЕАЛЬНЫЕ ДАННЫЕ — ИСКЛЮЧИТЕЛЬНО ЧЕРЕЗ ЛОКАЛЬНЫЙ ПРОКСИ (порт 5050).
-   Прямых вызовов к *.rapidapi.com из браузера здесь НЕТ и быть не должно.
+   РЕАЛЬНЫЕ ДАННЫЕ — ИСКЛЮЧИТЕЛЬНО ЧЕРЕЗ ЛОКАЛЬНЫЙ ПРОКСИ
    ================================================================ */
 const fetchRealProfile = async (handle, apiKey, tag) => {
   let infoRes;
@@ -390,76 +488,67 @@ const fetchRealProfile = async (handle, apiKey, tag) => {
   if (!infoRes.ok) {
     let body = null;
     try { body = await infoRes.json(); } catch (_) {}
-    if (infoRes.status === 404) throw new Error(body?.error ? `404: ${body.error}` : `Аккаунт @${handle} не найден.`);
-    if (infoRes.status === 403) throw new Error(`403 от RapidAPI: ${body?.rapidBody?.message || body?.error || "нет доступа — проверьте подписку и API-ключ"}.`);
+    const apiMsg = body?.error || body?.rapidBody?.meta?.message || body?.rapidBody?.message;
+    if (infoRes.status === 404) {
+      throw new Error(`Аккаунт @${handle} не найден в базе сервиса. Возможно, профиль приватный, не существует, или ещё не проиндексирован. Попробуйте крупный публичный аккаунт, например "nasa" или "nike".`);
+    }
+    if (infoRes.status === 403) throw new Error(`403 от RapidAPI: ${apiMsg || "нет доступа — проверьте подписку и API-ключ"}.`);
     if (infoRes.status === 401) throw new Error(`401: API-ключ недействителен или не передан.`);
     if (infoRes.status === 429) throw new Error(`429: Превышен лимит запросов RapidAPI. Подождите немного.`);
-    throw new Error(body?.error ? `Ошибка ${infoRes.status}: ${body.error}` : `Сервер вернул ошибку ${infoRes.status}.`);
+    if (infoRes.status === 400) throw new Error(`400: ${apiMsg || "сервис не принял параметры запроса"}.`);
+    throw new Error(apiMsg ? `Ошибка ${infoRes.status}: ${apiMsg}` : `Сервер вернул ошибку ${infoRes.status}.`);
   }
 
   const infoJson = await infoRes.json();
-  console.log("📦 RAW ответ /api/userinfo:", infoJson); // видно в консоли браузера (F12) для отладки структуры
+  console.log("📦 RAW ответ для @" + handle + ":", infoJson);
 
-  // Эндпоинты статистики Instagram обычно оборачивают данные по-разному —
-  // пробуем все типичные варианты вложенности, чтобы не зависеть от того,
-  // какой конкретно путь сработал на бэкенде (community / info / profile / stats).
   const d = infoJson?.data?.community || infoJson?.community
           || infoJson?.data?.profile   || infoJson?.profile
           || infoJson?.data            || infoJson;
 
-  if (!d || (!d.follower_count && !d.followers && !d.usersCount && !d.username && !d.name)) {
-    throw new Error("Профиль не найден — пустой/неузнаваемый ответ от Instagram API. Откройте консоль браузера (F12) и посмотрите 'RAW ответ', чтобы увидеть реальную структуру.");
+  if (!d || (!d.follower_count && !d.followers && !d.usersCount && !d.followersCount && !d.username && !d.name)) {
+    throw new Error("Профиль найден, но структура ответа неожиданная. Откройте консоль браузера (F12) и посмотрите 'RAW ответ'.");
   }
 
   const followers = d.follower_count || d.followers || d.usersCount || d.followersCount || 0;
   const name      = d.full_name || d.name || d.username || d.title || handle;
-  const avatarUrl = d.profile_pic_url_hd || d.profile_pic_url || d.avatar_url || d.image || d.avatar || null;
+  const avatarUrl = d.profile_pic_url_hd || d.profile_pic_url || d.avatar_url || d.image || d.avatar || d.picture || null;
   const verified  = !!(d.is_verified || d.verified);
 
-  let realPosts  = null;
-  let avgLikes   = Math.round(followers * 0.018);
-  let er         = 1.8;
+  let avgLikes = d.avgLikes || d.avg_likes || d.averageLikes || d.likesCount || Math.round(followers * 0.018);
+  let er = d.qualityScore || d.engagementRate || d.engagement_rate || d.er || d.communityER
+        || (followers > 0 && avgLikes ? +((avgLikes / followers) * 100).toFixed(2) : 1.8);
+  er = Math.max(0.1, +Number(er).toFixed(2));
 
-  try {
-    const postsRes = await fetch(`${BACKEND_URL}/api/userposts?username=${encodeURIComponent(handle)}`, {
-      method: "GET",
-      headers: { "x-rapidapi-key": apiKey || "" },
+  const postsArr = d.lastPosts || d.posts || d.recentPosts || d.media || d.items || d.publications || null;
+  let realPosts = null;
+  if (Array.isArray(postsArr) && postsArr.length > 0) {
+    const typeMap = { 1: "Фото", 2: "Видео", 8: "Карусель" };
+    const iconMap = { 1: "🖼️",   2: "🎬",    8: "🗂️"     };
+    realPosts = postsArr.slice(0, 6).map((item, i) => {
+      const likes     = item.like_count    ?? item.likes    ?? item.likesCount    ?? 0;
+      const comments  = item.comment_count ?? item.comments ?? item.commentsCount ?? 0;
+      const thumbnail = item.thumbnail || item.display_url || item.image_url || item.thumbnail_url || item.cover || item.preview || null;
+      const shortcode = item.shortcode || item.code || null;
+      const link      = item.permalink || item.link || item.url || (shortcode ? `https://www.instagram.com/p/${shortcode}/` : null);
+      return {
+        id: i,
+        type: typeMap[item.media_type] || "Reels",
+        icon: iconMap[item.media_type] || "🎞️",
+        likes, comments,
+        er: followers > 0 ? Math.max(0, +(((likes + comments) / followers) * 100).toFixed(2)) : 0,
+        thumbnail,
+        link: link || `https://www.instagram.com/${handle}/`,
+      };
     });
-
-    if (postsRes.ok) {
-      const postsJson = await postsRes.json();
-      const items = postsJson?.data?.items || postsJson?.items || postsJson?.data || [];
-
-      if (Array.isArray(items) && items.length > 0) {
-        const typeMap = { 1: "Фото", 2: "Видео", 8: "Карусель" };
-        const iconMap = { 1: "🖼️",   2: "🎬",    8: "🗂️"     };
-        realPosts = items.slice(0, 6).map((item, i) => ({
-          id:       i,
-          type:     typeMap[item.media_type] || "Reels",
-          icon:     iconMap[item.media_type] || "🎞️",
-          likes:    item.like_count    || item.likes || 0,
-          comments: item.comment_count || item.comments || 0,
-          er: followers > 0
-            ? Math.max(0, +((((item.like_count || item.likes || 0) + (item.comment_count || item.comments || 0)) / followers) * 100).toFixed(2))
-            : 0,
-        }));
-        avgLikes = Math.round(realPosts.reduce((s, p) => s + p.likes, 0) / realPosts.length);
-        er = +(realPosts.reduce((s, p) => s + parseFloat(p.er), 0) / realPosts.length).toFixed(2);
-      }
-    }
-  } catch (_) { /* посты не критичны — используем оценочные значения */ }
+    avgLikes = Math.round(realPosts.reduce((s, p) => s + p.likes, 0) / realPosts.length);
+    er = +(realPosts.reduce((s, p) => s + parseFloat(p.er), 0) / realPosts.length).toFixed(2);
+  }
 
   return buildProfile({
-    id:        Date.now(),
-    username:  handle,
-    name,
-    tag:       tag || "Реальный",
-    followers,
-    avgLikes:  Math.max(avgLikes, 1),
-    er:        Math.max(er, 0.1),
-    avatarUrl,
-    realPosts,
-    verified,
+    id: Date.now(), username: handle, name, tag: tag || "Реальный",
+    followers, avgLikes: Math.max(avgLikes, 1), er: Math.max(er, 0.1),
+    avatarUrl, realPosts, verified,
   });
 };
 
@@ -476,9 +565,7 @@ const AvatarDisplay = ({ av, size = 52, fontSize = "1.28rem" }) => {
 
   return (
     <div className="ig-ring" style={{ width: size + 5, height: size + 5, padding: 2.5 }}>
-      <div className="ig-ring-inner" style={{ width: size, height: size, background: bg }}>
-        {ico}
-      </div>
+      <div className="ig-ring-inner" style={{ width: size, height: size, background: bg }}>{ico}</div>
     </div>
   );
 };
@@ -491,17 +578,14 @@ const Sparkline = ({ data = [], color = "#a855f7", h = 40 }) => {
   if (data.length < 2) return null;
   const W = 200, H = h;
   const min = Math.min(...data), max = Math.max(...data), rng = max - min || 1;
-  const pts = data.map((v, i) => [
-    (i / (data.length - 1)) * W,
-    H - ((v - min) / rng) * (H - 4) - 2,
-  ]);
+  const pts = data.map((v, i) => [(i / (data.length - 1)) * W, H - ((v - min) / rng) * (H - 4) - 2]);
   const line = pts.map((p, i) => `${i ? "L" : "M"}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
   const area = `${line} L${pts[pts.length - 1][0].toFixed(1)},${H} L0,${H} Z`;
   return (
     <svg className="spark" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" style={{ height: h }}>
       <defs>
         <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stopColor={color} stopOpacity=".35" />
+          <stop offset="0%" stopColor={color} stopOpacity=".35" />
           <stop offset="100%" stopColor={color} stopOpacity=".02" />
         </linearGradient>
       </defs>
@@ -530,22 +614,14 @@ const LineChart = React.memo(({ labels, datasets, cacheKey }) => {
           g.addColorStop(0, ds.color + "50");
           g.addColorStop(1, ds.color + "00");
           return {
-            label:                ds.label,
-            data:                 ds.data,
-            borderColor:          ds.color,
-            backgroundColor:      g,
-            borderWidth:          2,
-            tension:              0.42,
-            fill:                 true,
-            pointRadius:          labels.length > 14 ? 0 : 3,
-            pointHoverRadius:     5,
-            pointBackgroundColor: ds.color,
+            label: ds.label, data: ds.data, borderColor: ds.color, backgroundColor: g,
+            borderWidth: 2, tension: 0.42, fill: true,
+            pointRadius: labels.length > 14 ? 0 : 3, pointHoverRadius: 5, pointBackgroundColor: ds.color,
           };
         }),
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
+        responsive: true, maintainAspectRatio: false,
         interaction: { mode: "index", intersect: false },
         plugins: {
           legend: { labels: { color: "#a1a1aa", font: { size: 11 }, boxWidth: 12, padding: 14 } },
@@ -569,20 +645,20 @@ const LineChart = React.memo(({ labels, datasets, cacheKey }) => {
 /* ================================================================
    PROFILE CARD
    ================================================================ */
-const Card = ({ p, tf, selected, onClick, onDelete }) => {
+const Card = ({ p, tf, selected, onClick, onDelete, onEdit, compareOn, onToggleCompare }) => {
   const spark = (p.series[tf]?.followers || []).slice(-20);
   const up    = p.todayDelta >= 0;
 
-  const handleDelete = e => {
-    e.stopPropagation();
-    if (window.confirm(`Удалить ${p.username} из отслеживания?`)) onDelete(p.id);
-  };
+  const stop = (fn) => e => { e.stopPropagation(); fn(); };
 
   return (
-    <div className={`card${selected ? " sel" : ""}`} onClick={onClick}>
+    <div className={`card${selected ? " sel" : ""}${compareOn ? " cmp-on" : ""}`} onClick={onClick}>
       <div className="c-head">
         <div className="c-prof">
-          <AvatarDisplay av={p.av} size={47} fontSize="1.22rem" />
+          <button className={`cmp-check${compareOn ? " on" : ""}`} onClick={stop(onToggleCompare)} title="Добавить к сравнению">
+            {compareOn ? "✓" : ""}
+          </button>
+          <AvatarDisplay av={p.av} size={44} fontSize="1.15rem" />
           <div>
             <div className="c-name">
               {p.name}
@@ -593,12 +669,15 @@ const Card = ({ p, tf, selected, onClick, onDelete }) => {
             {p.tag && <span className="c-tag">{p.tag}</span>}
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+        <div className="card-actions">
           <div className={`badge ${up ? "up" : "dn"}`}>
             <span className="arr">{up ? "▲" : "▼"}</span>
             {fmtDelta(p.todayDelta)}
           </div>
-          <button className="del-btn" onClick={handleDelete} title="Удалить профиль">🗑</button>
+          <div className="btn-row">
+            <button className="del-btn edit-btn" onClick={stop(onEdit)} title="Редактировать">✎</button>
+            <button className="del-btn" onClick={stop(onDelete)} title="Удалить профиль">🗑</button>
+          </div>
         </div>
       </div>
 
@@ -616,7 +695,7 @@ const Card = ({ p, tf, selected, onClick, onDelete }) => {
 /* ================================================================
    DETAIL PANEL
    ================================================================ */
-const Detail = ({ p, tf, onClose, onDelete }) => {
+const Detail = ({ p, tf, onClose, onDelete, onEdit }) => {
   const [tab,    setTab]    = React.useState(0);
   const [sortBy, setSortBy] = React.useState("likes");
   const TABS = ["Рост подписчиков", "Вовлеченность", "Аналитика публикаций"];
@@ -637,6 +716,8 @@ const Detail = ({ p, tf, onClose, onDelete }) => {
   const growthPct = ((growth / (s.followers[0] || 1)) * 100).toFixed(2);
   const avgER     = (s.er.reduce((a, b) => a + b, 0) / s.er.length).toFixed(2);
   const up        = p.todayDelta >= 0;
+  const perDay    = growth / (TF_DAYS[tf] || 30);
+  const quality   = audienceQuality(avgER);
 
   const sortedPosts = [...(p.posts || [])].sort((a, b) => {
     if (sortBy === "comments") return b.comments - a.comments;
@@ -644,16 +725,24 @@ const Detail = ({ p, tf, onClose, onDelete }) => {
     return b.likes - a.likes;
   });
 
+  const topPostId = p.posts.length
+    ? p.posts.reduce((best, cur) => parseFloat(cur.er) > parseFloat(best.er) ? cur : best).id
+    : null;
+
+  const typeCounts = p.posts.reduce((acc, post) => {
+    acc[post.type] = (acc[post.type] || 0) + 1;
+    return acc;
+  }, {});
+
   const statCards = [
     { lbl: "Всего подписчиков",      val: fmt(p.followers), delta: fmtDelta(p.todayDelta) + " сег.", up },
     { lbl: `Прирост (${cfg.label})`, val: fmtDelta(growth), delta: growthPct + "%",                  up: growth >= 0 },
+    { lbl: "Рост/день (сред.)",      val: fmtDelta(Math.round(perDay)), delta: null },
     { lbl: "Avg. Лайки/пост",        val: fmt(p.avgLikes),  delta: null },
     { lbl: "Средний ER%",            val: avgER + "%",       delta: null },
   ];
 
-  const handleDelete = () => {
-    if (window.confirm(`Удалить ${p.username} из отслеживания?`)) onDelete(p.id);
-  };
+  const handleDelete = () => { if (window.confirm(`Удалить ${p.username} из отслеживания?`)) onDelete(p.id); };
 
   return (
     <div className="detail">
@@ -667,18 +756,28 @@ const Detail = ({ p, tf, onClose, onDelete }) => {
             </div>
             <div className="d-handle">
               {p.username}
-              {p.tag   && <span className="c-tag">{p.tag}</span>}
+              {p.tag    && <span className="c-tag">{p.tag}</span>}
               {p.isReal && <span className="live-badge">live</span>}
             </div>
           </div>
         </div>
         <div className="d-actions">
+          <button className="del-btn edit-btn" style={{ padding: "6px 11px", borderRadius: 8, fontSize: ".78rem" }} onClick={() => onEdit(p.id)}>
+            ✎ Редактировать
+          </button>
           <button className="del-btn" style={{ padding: "6px 11px", borderRadius: 8, fontSize: ".78rem" }} onClick={handleDelete}>
             🗑 Удалить
           </button>
           <button className="close-btn" onClick={onClose} title="Закрыть">✕</button>
         </div>
       </div>
+
+      {p.comment && p.comment.trim() && (
+        <div className="notes-box">
+          <div className="notes-lbl">📝 Заметки</div>
+          <div className="notes-text">{p.comment}</div>
+        </div>
+      )}
 
       <div className="tabs">
         {TABS.map((t, i) => (
@@ -694,12 +793,22 @@ const Detail = ({ p, tf, onClose, onDelete }) => {
             {c.delta && <div className={`ds-d ${c.up ? "dg" : "dr"}`}>{c.up ? "▲" : "▼"} {c.delta}</div>}
           </div>
         ))}
+        <div className="ds">
+          <div className="ds-lbl">Качество аудитории</div>
+          <div className="ds-val" style={{ backgroundImage: "none", WebkitTextFillColor: quality.color, color: quality.color }}>{quality.label}</div>
+          <div className="ds-d" style={{ color: "var(--text-m)" }}>по ER {avgER}%</div>
+        </div>
       </div>
 
       {tab < 2 ? (
         <LineChart labels={charts[tab].labels} datasets={charts[tab].datasets} cacheKey={`${p.id}_${tf}_${tab}`} />
       ) : (
         <div>
+          <div className="post-dist">
+            {Object.entries(typeCounts).map(([type, count]) => (
+              <span key={type} className="post-dist-item">{count}× {type}</span>
+            ))}
+          </div>
           <div className="sort-bar">
             <span style={{ fontSize: ".78rem", color: "var(--text-m)", marginRight: 6 }}>Сортировка:</span>
             <button className={`sort-btn${sortBy === "likes" ? " on" : ""}`} onClick={() => setSortBy("likes")}>По лайкам</button>
@@ -709,10 +818,29 @@ const Detail = ({ p, tf, onClose, onDelete }) => {
           <div className="posts-grid">
             {sortedPosts.map(post => (
               <div className="post" key={post.id}>
-                <div className="post-type"><span>{post.icon}</span> {post.type}</div>
+                <div className="post-thumb-wrap">
+                  {post.thumbnail && (
+                    <img
+                      src={post.thumbnail} alt={post.type} className="post-thumb"
+                      onError={e => { e.target.style.display = "none"; e.target.nextElementSibling.style.display = "flex"; }}
+                    />
+                  )}
+                  <div className="post-thumb-fallback" style={{ display: post.thumbnail ? "none" : "flex" }}>
+                    <span style={{ fontSize: "1.7rem" }}>{post.icon}</span>
+                  </div>
+                  <span className="post-type-badge">{post.icon} {post.type}</span>
+                </div>
                 <div className="post-row"><span className="post-l">❤️ Лайки</span><span className="post-v">{fmt(post.likes)}</span></div>
                 <div className="post-row"><span className="post-l">💬 Комм.</span><span className="post-v">{fmt(post.comments)}</span></div>
-                <div className="post-er">ER {post.er}%</div>
+                <div className="post-er">
+                  ER {post.er}%
+                  {topPostId === post.id && <span className="best-tag">🏆 топ</span>}
+                </div>
+                {post.link && (
+                  <a href={post.link} target="_blank" rel="noopener noreferrer" className="post-link" onClick={e => e.stopPropagation()}>
+                    Открыть пост ↗
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -746,13 +874,8 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
       const f = rnd(500_000, 15_000_000);
       const l = Math.round(f * (rnd(15, 60) / 1000));
       const p = buildProfile({
-        id: Date.now(),
-        username: handle,
-        name: displayName,
-        tag: tag.trim() || "Демо",
-        followers: f,
-        avgLikes: l,
-        er: +((l / f) * 100).toFixed(2),
+        id: Date.now(), username: handle, name: displayName, tag: tag.trim() || "Демо",
+        followers: f, avgLikes: l, er: +((l / f) * 100).toFixed(2),
       });
       setBusy(false);
       onAdd(p);
@@ -776,10 +899,7 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
   return (
     <div className="overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
-        <div className="m-title">
-          <div className="m-ic">➕</div>
-          <h2>Добавить профиль</h2>
-        </div>
+        <div className="m-title"><div className="m-ic">➕</div><h2>Добавить профиль</h2></div>
 
         {hasKey ? (
           <div className="info-box info-purple">
@@ -787,7 +907,7 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
           </div>
         ) : (
           <div className="info-box info-orange">
-            ⚠️ <strong>API-ключ не указан в настройках.</strong> Будет сгенерирован демонстрационный профиль со случайными данными. Чтобы подгружать реальные данные, введите ключ в настройках (⚙).
+            ⚠️ <strong>API-ключ не указан в настройках.</strong> Будет сгенерирован демонстрационный профиль. Чтобы подгружать реальные данные, введите ключ в настройках (⚙).
           </div>
         )}
 
@@ -796,14 +916,9 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
         <div className="m-field">
           <label className="m-lbl">URL или @username Instagram-аккаунта</label>
           <input
-            className="m-in"
-            type="text"
-            placeholder="Например: nasa или @cristiano"
-            value={raw}
-            onChange={e => setRaw(e.target.value)}
-            disabled={busy}
-            onKeyDown={e => e.key === "Enter" && submit()}
-            autoFocus
+            className="m-in" type="text" placeholder="Например: nasa или @cristiano"
+            value={raw} onChange={e => setRaw(e.target.value)} disabled={busy}
+            onKeyDown={e => e.key === "Enter" && submit()} autoFocus
           />
           {raw.trim() && valid && (
             <div className="m-hint" style={{ color: "var(--purple)" }}>Будет добавлен: <strong>@{handle}</strong></div>
@@ -813,13 +928,8 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
         <div className="m-field">
           <label className="m-lbl">Категория / Заметка (необязательно)</label>
           <input
-            className="m-in"
-            type="text"
-            placeholder="Бренд, Медиа, Конкурент, Партнёр…"
-            value={tag}
-            onChange={e => setTag(e.target.value)}
-            disabled={busy}
-            maxLength={14}
+            className="m-in" type="text" placeholder="Бренд, Медиа, Конкурент, Партнёр…"
+            value={tag} onChange={e => setTag(e.target.value)} disabled={busy} maxLength={14}
           />
         </div>
 
@@ -828,11 +938,53 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
           <button className="btn-add" onClick={submit} disabled={!valid || busy}>
             {busy
               ? <><div className="spinner" /><span>Загрузка…</span></>
-              : hasKey
-              ? <span>🔍 Загрузить данные</span>
-              : <span>✦ Добавить</span>
-            }
+              : hasKey ? <span>🔍 Загрузить данные</span> : <span>✦ Добавить</span>}
           </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ================================================================
+   EDIT MODAL
+   ================================================================ */
+const EditModal = ({ profile, onClose, onSave }) => {
+  const [name,    setName]    = React.useState(profile.name);
+  const [tag,     setTag]     = React.useState(profile.tag || "");
+  const [comment, setComment] = React.useState(profile.comment || "");
+
+  const save = () => {
+    onSave(profile.id, { name: name.trim() || profile.name, tag: tag.trim(), comment: comment.trim() });
+    onClose();
+  };
+
+  return (
+    <div className="overlay" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <div className="m-title"><div className="m-ic">✎</div><h2>Редактировать профиль</h2></div>
+
+        <div className="m-field">
+          <label className="m-lbl">Имя / название</label>
+          <input className="m-in" value={name} onChange={e => setName(e.target.value)} />
+        </div>
+
+        <div className="m-field">
+          <label className="m-lbl">Категория</label>
+          <input className="m-in" value={tag} onChange={e => setTag(e.target.value)} placeholder="Бренд, Медиа, Конкурент…" maxLength={14} />
+        </div>
+
+        <div className="m-field">
+          <label className="m-lbl">Заметки / комментарий</label>
+          <textarea
+            className="m-in m-textarea" rows={4} value={comment} onChange={e => setComment(e.target.value)}
+            placeholder="Например: связаться по поводу рекламы после 10к подписчиков..."
+          />
+        </div>
+
+        <div className="m-actions">
+          <button className="btn-cancel" onClick={onClose}>Отмена</button>
+          <button className="btn-add" onClick={save}>💾 Сохранить</button>
         </div>
       </div>
     </div>
@@ -843,9 +995,9 @@ const AddModal = ({ onClose, onAdd, onToast }) => {
    SETTINGS MODAL
    ================================================================ */
 const SettingsModal = ({ onClose }) => {
-  const [key,      setKey]      = React.useState(loadApiKey);
-  const [saved,    setSaved]    = React.useState(false);
-  const [checking, setChecking] = React.useState(false);
+  const [key,       setKey]       = React.useState(loadApiKey);
+  const [saved,     setSaved]     = React.useState(false);
+  const [checking,  setChecking]  = React.useState(false);
   const [healthMsg, setHealthMsg] = React.useState(null);
 
   const handleSave = () => {
@@ -853,31 +1005,18 @@ const SettingsModal = ({ onClose }) => {
     setSaved(true);
     setTimeout(() => setSaved(false), 1400);
   };
-  const handleClear = () => {
-    setKey("");
-    saveApiKey("");
-    setSaved(false);
-    setHealthMsg(null);
-  };
+  const handleClear = () => { setKey(""); saveApiKey(""); setSaved(false); setHealthMsg(null); };
 
   const checkHealth = async () => {
     setChecking(true);
     setHealthMsg(null);
     try {
-      const res = await fetch(`${BACKEND_URL}/api/health`, {
-        headers: { "x-rapidapi-key": key.trim() || "" },
-      });
+      const res = await fetch(`${BACKEND_URL}/api/health`, { headers: { "x-rapidapi-key": key.trim() || "" } });
       if (!res.ok) throw new Error(`Сервер ответил статусом ${res.status}`);
       const data = await res.json();
-      setHealthMsg({
-        ok: true,
-        text: `✓ Сервер на связи. API-ключ: ${data.api_key}. Хост: ${data.api_host}.`,
-      });
+      setHealthMsg({ ok: true, text: `✓ Сервер на связи. API-ключ: ${data.api_key}. Хост: ${data.api_host}.` });
     } catch (e) {
-      setHealthMsg({
-        ok: false,
-        text: `✗ Не удалось связаться с ${BACKEND_URL}. Проверьте, запущен ли "node server.js". (${e.message})`,
-      });
+      setHealthMsg({ ok: false, text: `✗ Не удалось связаться с ${BACKEND_URL}. Проверьте, запущен ли "node server.js". (${e.message})` });
     } finally {
       setChecking(false);
     }
@@ -886,40 +1025,28 @@ const SettingsModal = ({ onClose }) => {
   return (
     <div className="overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
-        <div className="m-title">
-          <div className="m-ic">⚙️</div>
-          <h2>Настройки интеграции</h2>
-        </div>
+        <div className="m-title"><div className="m-ic">⚙️</div><h2>Настройки интеграции</h2></div>
 
         <div className="info-box info-purple">
-          🔌 Бэкенд-прокси должен быть запущен командой <code>node server.js</code> и слушать <code>{BACKEND_URL}</code>. Фронтенд НИКОГДА не обращается к RapidAPI напрямую.
+          🔌 Бэкенд-прокси должен быть запущен командой <code>node server.js</code> и слушать <code>{BACKEND_URL}</code>.
         </div>
 
         <div className="m-field">
           <label className="m-lbl">RapidAPI Key</label>
           <input
-            className="m-in"
-            type="password"
-            placeholder="Вставьте ваш x-rapidapi-key"
-            value={key}
-            onChange={e => { setKey(e.target.value); setHealthMsg(null); }}
+            className="m-in" type="password" placeholder="Вставьте ваш x-rapidapi-key"
+            value={key} onChange={e => { setKey(e.target.value); setHealthMsg(null); }}
           />
-          <div className="m-hint">
-            Ключ хранится в <code>localStorage</code> браузера и передаётся на бэкенд заголовком <code>x-rapidapi-key</code> при каждом запросе.
-          </div>
+          <div className="m-hint">Ключ хранится в <code>localStorage</code> браузера и передаётся на бэкенд заголовком <code>x-rapidapi-key</code>.</div>
         </div>
 
         {healthMsg && (
-          <div className={`info-box ${healthMsg.ok ? "info-purple" : "info-red"}`} style={{ fontSize: ".74rem" }}>
-            {healthMsg.text}
-          </div>
+          <div className={`info-box ${healthMsg.ok ? "info-purple" : "info-red"}`} style={{ fontSize: ".74rem" }}>{healthMsg.text}</div>
         )}
 
         <button
-          className="btn-cancel"
-          style={{ width: "100%", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}
-          onClick={checkHealth}
-          disabled={checking}
+          className="btn-cancel" style={{ width: "100%", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}
+          onClick={checkHealth} disabled={checking}
         >
           {checking ? <><div className="spinner" /> Проверка связи…</> : "🔍 Проверить связь с сервером"}
         </button>
@@ -936,13 +1063,74 @@ const SettingsModal = ({ onClose }) => {
 };
 
 /* ================================================================
+   COMPARE MODAL
+   ================================================================ */
+const COMPARE_COLORS = ["#a855f7", "#ec4899", "#f97316", "#22c55e", "#3b82f6"];
+
+const CompareModal = ({ profiles, tf, onClose }) => {
+  const cfg    = TF[tf];
+  const labels = makeDates(cfg.pts, cfg.unit).map(d => dlabel(d, cfg.unit));
+  const datasets = profiles.map((p, i) => ({
+    label: p.username, data: (p.series[tf]?.followers) || [], color: COMPARE_COLORS[i % COMPARE_COLORS.length],
+  }));
+
+  const rows = [
+    { lbl: "Подписчики",  get: p => p.followers,        fmtv: fmt },
+    { lbl: "Avg. Лайки",  get: p => p.avgLikes,          fmtv: fmt },
+    { lbl: "ER%",         get: p => Number(p.er),        fmtv: v => v.toFixed(2) + "%" },
+    { lbl: `Прирост (${cfg.label})`, get: p => { const s = p.series[tf]; return s.followers[s.followers.length - 1] - s.followers[0]; }, fmtv: fmtDelta },
+  ];
+
+  return (
+    <div className="overlay" onClick={onClose}>
+      <div className="modal cmp-modal" onClick={e => e.stopPropagation()}>
+        <div className="m-title"><div className="m-ic">⚖️</div><h2>Сравнение профилей ({profiles.length})</h2></div>
+
+        <div className="cmp-avatars">
+          {profiles.map((p, i) => (
+            <div key={p.id} className="cmp-avatar-item">
+              <AvatarDisplay av={p.av} size={36} fontSize=".95rem" />
+              <div>
+                <div style={{ fontWeight: 700, fontSize: ".82rem" }}>{p.name}</div>
+                <div style={{ fontSize: ".72rem", color: COMPARE_COLORS[i % COMPARE_COLORS.length] }}>{p.username}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <LineChart labels={labels} datasets={datasets} cacheKey={`cmp-${profiles.map(p => p.id).join("-")}-${tf}`} />
+
+        <table className="cmp-table">
+          <thead>
+            <tr><th>Метрика</th>{profiles.map(p => <th key={p.id}>{p.username}</th>)}</tr>
+          </thead>
+          <tbody>
+            {rows.map((row, ri) => {
+              const values = profiles.map(row.get);
+              const max = Math.max(...values);
+              return (
+                <tr key={ri}>
+                  <td>{row.lbl}</td>
+                  {values.map((v, vi) => <td key={vi} className={v === max ? "cmp-best" : ""}>{row.fmtv(v)}</td>)}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        <div className="m-actions">
+          <button className="btn-cancel" style={{ flex: 1 }} onClick={onClose}>Закрыть</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ================================================================
    TOAST
    ================================================================ */
 const Toast = ({ msg, onHide }) => {
-  React.useEffect(() => {
-    const t = setTimeout(onHide, 3500);
-    return () => clearTimeout(t);
-  }, [msg]);
+  React.useEffect(() => { const t = setTimeout(onHide, 3500); return () => clearTimeout(t); }, [msg]);
   return (
     <div className="toast">
       <div className="toast-dot" />
@@ -955,25 +1143,24 @@ const Toast = ({ msg, onHide }) => {
    APP
    ================================================================ */
 const App = () => {
-  const [profiles,  setProfiles]  = React.useState(() => { const l = loadProfiles(); return l && l.length > 0 ? l : INIT_PROFILES; });
-  const [selId,     setSelId]     = React.useState(null);
-  const [tf,        setTf]        = React.useState("1М");
-  const [catFilter, setCatFilter] = React.useState("Все");
-  const [showAdd,   setShowAdd]   = React.useState(false);
-  const [showSet,   setShowSet]   = React.useState(false);
-  const [toast,     setToast]     = React.useState(null);
-  const [hasKey,    setHasKey]    = React.useState(!!loadApiKey());
+  const [profiles,   setProfiles]   = React.useState(() => { const l = loadProfiles(); return l && l.length > 0 ? l : INIT_PROFILES; });
+  const [selId,      setSelId]      = React.useState(null);
+  const [tf,         setTf]         = React.useState("1М");
+  const [catFilter,  setCatFilter]  = React.useState("Все");
+  const [search,     setSearch]     = React.useState("");
+  const [sortBy,     setSortBy]     = React.useState("default");
+  const [showAdd,    setShowAdd]    = React.useState(false);
+  const [showSet,    setShowSet]    = React.useState(false);
+  const [editId,     setEditId]     = React.useState(null);
+  const [compareIds, setCompareIds] = React.useState(() => new Set());
+  const [showCompare,setShowCompare]= React.useState(false);
+  const [toast,      setToast]      = React.useState(null);
+  const [hasKey,     setHasKey]     = React.useState(!!loadApiKey());
 
   React.useEffect(() => { saveProfiles(profiles); }, [profiles]);
+  React.useEffect(() => { if (selId && !profiles.find(p => p.id === selId)) setSelId(null); }, [profiles, selId]);
 
-  React.useEffect(() => {
-    if (selId && !profiles.find(p => p.id === selId)) setSelId(null);
-  }, [profiles, selId]);
-
-  const handleSetClose = () => {
-    setShowSet(false);
-    setHasKey(!!loadApiKey());
-  };
+  const handleSetClose = () => { setShowSet(false); setHasKey(!!loadApiKey()); };
 
   const addProfile = React.useCallback(p => {
     setProfiles(prev => [p, ...prev]);
@@ -982,9 +1169,24 @@ const App = () => {
 
   const deleteProfile = React.useCallback(id => {
     setProfiles(prev => prev.filter(p => p.id !== id));
+    setCompareIds(prev => { const next = new Set(prev); next.delete(id); return next; });
+  }, []);
+
+  const updateProfile = React.useCallback((id, patch) => {
+    setProfiles(prev => prev.map(p => p.id === id ? { ...p, ...patch } : p));
   }, []);
 
   const showToast = React.useCallback(msg => setToast(msg), []);
+
+  const toggleCompare = id => {
+    setCompareIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) { next.delete(id); return next; }
+      if (next.size >= 5) { showToast("Можно сравнить максимум 5 профилей одновременно."); return prev; }
+      next.add(id);
+      return next;
+    });
+  };
 
   const categories = React.useMemo(() => {
     const set = new Set();
@@ -992,17 +1194,27 @@ const App = () => {
     return ["Все", ...Array.from(set)];
   }, [profiles]);
 
-  const filtered = React.useMemo(() => {
-    if (catFilter === "Все") return profiles;
-    return profiles.filter(p => p.tag === catFilter);
-  }, [profiles, catFilter]);
+  const displayedProfiles = React.useMemo(() => {
+    let arr = catFilter === "Все" ? profiles : profiles.filter(p => p.tag === catFilter);
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      arr = arr.filter(p => p.name.toLowerCase().includes(q) || p.username.toLowerCase().includes(q));
+    }
+    arr = [...arr];
+    if (sortBy === "followers") arr.sort((a, b) => b.followers - a.followers);
+    else if (sortBy === "er")    arr.sort((a, b) => Number(b.er) - Number(a.er));
+    else if (sortBy === "growth")arr.sort((a, b) => b.todayDelta - a.todayDelta);
+    return arr;
+  }, [profiles, catFilter, search, sortBy]);
 
   const totalFollowers = profiles.reduce((s, p) => s + p.followers, 0);
   const totalAvgLikes  = profiles.reduce((s, p) => s + p.avgLikes, 0);
   const globalAvgER    = profiles.length ? +(profiles.reduce((s, p) => s + parseFloat(p.er), 0) / profiles.length).toFixed(2) : 0;
   const globalDelta    = profiles.reduce((s, p) => s + p.todayDelta, 0);
 
-  const selProfile = profiles.find(p => p.id === selId);
+  const selProfile  = profiles.find(p => p.id === selId);
+  const editProfile = profiles.find(p => p.id === editId);
+  const compareList = profiles.filter(p => compareIds.has(p.id));
 
   return (
     <>
@@ -1036,7 +1248,7 @@ const App = () => {
           <div className="s-div"/>
           <div className="s-item">
             <span className="s-lbl">Динамика сегодня</span>
-            <span className={`s-val ${globalDelta >= 0 ? "dg" : "dr"}`}>{fmtDelta(globalDelta)}</span>
+            <span className="s-val" style={{ color: globalDelta >= 0 ? "var(--green)" : "var(--red)" }}>{fmtDelta(globalDelta)}</span>
           </div>
         </div>
       </section>
@@ -1044,7 +1256,7 @@ const App = () => {
       <main className="main">
         <div className="wrap">
           <div className="top-bar">
-            <h3 className="sec-title">Мониторинг аккаунтов <span>({filtered.length})</span></h3>
+            <h3 className="sec-title">Мониторинг аккаунтов <span>({displayedProfiles.length})</span></h3>
             <button className="add-btn" onClick={() => setShowAdd(true)}>➕ Добавить профиль</button>
           </div>
 
@@ -1061,29 +1273,43 @@ const App = () => {
             </div>
           )}
 
+          <div className="grid-controls">
+            <input
+              className="search-in" type="text" placeholder="🔍 Поиск по имени или @username..."
+              value={search} onChange={e => setSearch(e.target.value)}
+            />
+            <select className="sort-select" value={sortBy} onChange={e => setSortBy(e.target.value)}>
+              <option value="default">Сортировка: по умолчанию</option>
+              <option value="followers">По подписчикам ↓</option>
+              <option value="er">По ER% ↓</option>
+              <option value="growth">По росту сегодня ↓</option>
+            </select>
+          </div>
+
           {selProfile && (
-            <Detail p={selProfile} tf={tf} onClose={() => setSelId(null)} onDelete={deleteProfile} />
+            <Detail p={selProfile} tf={tf} onClose={() => setSelId(null)} onDelete={deleteProfile} onEdit={setEditId} />
           )}
 
-          {filtered.length === 0 ? (
+          {displayedProfiles.length === 0 ? (
             <div className="empty">
               <div className="empty-ic">📊</div>
               <div className="empty-t">
-                {catFilter !== "Все"
-                  ? `Нет профилей в категории «${catFilter}».`
+                {search.trim() ? `Ничего не найдено по запросу «${search}».`
+                  : catFilter !== "Все" ? `Нет профилей в категории «${catFilter}».`
                   : "Нет отслеживаемых профилей.\nНажмите «Добавить профиль», чтобы начать."}
               </div>
             </div>
           ) : (
             <div className="grid">
-              {filtered.map(p => (
+              {displayedProfiles.map(p => (
                 <Card
-                  key={p.id}
-                  p={p}
-                  tf={tf}
+                  key={p.id} p={p} tf={tf}
                   selected={selId === p.id}
                   onClick={() => setSelId(selId === p.id ? null : p.id)}
                   onDelete={deleteProfile}
+                  onEdit={() => setEditId(p.id)}
+                  compareOn={compareIds.has(p.id)}
+                  onToggleCompare={() => toggleCompare(p.id)}
                 />
               ))}
             </div>
@@ -1091,8 +1317,22 @@ const App = () => {
         </div>
       </main>
 
+      {compareIds.size >= 2 && (
+        <div className="cmp-bar">
+          <span>Выбрано для сравнения: <strong>{compareIds.size}</strong></span>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button className="btn-cancel" onClick={() => setCompareIds(new Set())}>Очистить</button>
+            <button className="add-btn" onClick={() => setShowCompare(true)}>⚖ Сравнить</button>
+          </div>
+        </div>
+      )}
+
       {showAdd && <AddModal onClose={() => setShowAdd(false)} onAdd={addProfile} onToast={showToast} />}
       {showSet && <SettingsModal onClose={handleSetClose} />}
+      {editProfile && <EditModal profile={editProfile} onClose={() => setEditId(null)} onSave={updateProfile} />}
+      {showCompare && compareList.length >= 2 && (
+        <CompareModal profiles={compareList} tf={tf} onClose={() => setShowCompare(false)} />
+      )}
       {toast && <Toast msg={toast} onHide={() => setToast(null)} />}
     </>
   );
