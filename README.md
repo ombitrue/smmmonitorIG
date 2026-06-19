@@ -31,6 +31,7 @@ node server.js
 ```
 Once the server is running, simply open index.html in your web browser.
 
+---
 
 ⚙️ API Configuration & Variations
 This project is designed to be flexible. Depending on your needs, you can switch the data provider.
@@ -58,6 +59,8 @@ You will need to implement session handling (cookies/tokens).
 
 Replace the axios logic in server.js with specific library methods.
 Note: This approach requires careful handling to avoid account bans.
+
+---
 
 ⚠️ Troubleshooting
 CORS Errors: Ensure the Node.js server is running (node server.js) and listening on port 5000. Check your cors settings in server.js.
